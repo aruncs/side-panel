@@ -1,16 +1,23 @@
+var sidePanelTimer = null
 window.addEventListener("load",function(){
   
 })
 
-function handleSidePannelOpenButtonClick(){
-  debugger;
+function handleSidePanelOpenButtonClick(){
   let sidePannelWrapper = document.getElementById("idSidePannelWrapper")
   sidePannelWrapper.style.width = '250px'
   
 }
 
-function handleSidePannelContentMouseOut(){
-  debugger
+function handleSidePanelContentMouseOut(){
+  sidePanelTimer = setTimeout(closeSidePanel,500)
+  
+}
+
+function handleSidePanelContentMouseOver(){
+  clearTimeout(sidePanelTimer)
+}
+function closeSidePanel(){
   let sidePannelWrapper = document.getElementById("idSidePannelWrapper")
   sidePannelWrapper.style.width = '0px' 
 }
